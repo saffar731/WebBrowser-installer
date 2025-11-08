@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Browser Installer - Ulaa</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Configure the font and a smooth transition for hover effects */
+        
+         :root {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .browser-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .browser-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <script>
+        // Set up Tailwind configuration to use the Inter font
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'ulaa-main': '#667eea',
+                        'chrome-main': '#4285F4',
+                        'edge-main': '#0078D4',
+                    }
+                }
+            }
+        }
+
+        /*
+         * Note: The previous JavaScript download functions (downloadFile, showMessageBox)
+         * have been removed as the download links are now handled directly by the <a> tags.
+         */
+    </script>
+</head>
+
+<body class="bg-gray-900 min-h-screen text-gray-200">
+
+    <!-- Navbar -->
+    <header class="bg-gradient-to-r from-purple-600 to-indigo-700 shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 py-4 md:py-6 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-white tracking-tight">
+                Web Browser Installers
+            </h1>
+            <div class="text-white flex items-center space-x-2 text-sm font-semibold opacity-80">
+                <!-- Using a simple icon/text combination for PC Downloads -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="12" x2="12" y1="17" y2="21"/><line x1="8" x2="16" y1="21" y2="21"/></svg>
+                <span>PC Downloads</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <!-- Instructions Banner -->
+        <div class="bg-gray-800 p-6 md:p-8 rounded-2xl shadow-inner border border-gray-700 mb-12">
+            <div class="flex items-start space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-400 mt-1 flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Installation Guide</h3>
+                    <p class="text-gray-400">
+                        Click the download button for your preferred browser setup file. Once downloaded, locate the file in your downloads folder and double-click to run the installer. Select any of the option and click install.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browser Cards Grid -->
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+
+            <!-- Ulaa Card -->
+            <div class="browser-card bg-gray-800 p-6 rounded-2xl border border-gray-700 shadow-xl flex flex-col items-center text-center">
+                <!-- Placeholder Image for Ulaa Logo -->
+                <div class="p-1 rounded-full bg-white mb-4 shadow-xl">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Ulaa Browser Logo Placeholder" class="w-24 h-24 rounded-full object-cover">
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2">Ulaa</h2>
+                <p class="text-gray-400 mb-6 flex-grow">
+                    The next-generation, privacy-focused browser built for security, speed, and anonymous browsing.
+                </p>
+                <!-- Updated to use <a> tag for native download -->
+                <a href="./UlaaSetup-v2.4.5.exe" download="Ulaa_Browser_Installer.exe" class="w-full bg-ulaa-main hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download w-5 h-5 inline mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>                    Download Ulaa
+                </a>
+            </div>
+
+
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-8 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Browser Download Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
